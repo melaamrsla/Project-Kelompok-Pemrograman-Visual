@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="500" pageHeight="400" orientation="Landscape" columnWidth="480" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="10" uuid="fee8bc3f-8fb8-401d-a5fa-4b1d5391ce4b">
+	<property name="ireport.zoom" value="1.0000000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     member.`id_member` AS member_id_member,
+     member.`nama` AS member_nama,
+     member.`nisn` AS member_nisn,
+     member.`jurusan` AS member_jurusan,
+     member.`alamat` AS member_alamat,
+     member.`no_telepon` AS member_no_telepon,
+     member.`tanggal_daftar` AS member_tanggal_daftar
+FROM
+     `member` member
+where id_member = $P{id}]]>
+	</queryString>
+	<field name="member_id_member" class="java.lang.String"/>
+	<field name="member_nama" class="java.lang.String"/>
+	<field name="member_nisn" class="java.lang.String"/>
+	<field name="member_jurusan" class="java.lang.String"/>
+	<field name="member_alamat" class="java.lang.String"/>
+	<field name="member_no_telepon" class="java.lang.String"/>
+	<field name="member_tanggal_daftar" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="66" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-10" y="-21" width="500" height="87" backcolor="#006699" uuid="3948f39a-277c-41ca-b317-a4046c03d57c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="112" y="-10" width="320" height="30" forecolor="#FFFFFF" uuid="9184eb51-e331-4c4d-83d5-ebb10b589cca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[KARTU ANGGOTA PERPUSTAKAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="20" width="320" height="20" forecolor="#FFFFFF" uuid="04dbd1b0-9d0f-439f-9cb2-511816a265dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[SEKOLAH TECHNOLOGI AI]]></text>
+			</staticText>
+			<image>
+				<reportElement x="19" y="-21" width="120" height="86" uuid="74233de0-c8b0-4bb2-b2c4-787b9e8e0ed2"/>
+				<imageExpression><![CDATA["C:\\Users\\hp\\OneDrive\\Documents\\NetBeansProjects\\Perpus\\src\\img\\library (1).png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="276" splitType="Stretch">
+			<textField>
+				<reportElement x="293" y="19" width="164" height="20" uuid="31f86d8a-8339-4608-a363-02f1aa81dc9b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="39" width="164" height="20" uuid="3c6a7e02-4683-4c84-bbe6-a24d55bd08a4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="59" width="164" height="20" uuid="92c9b1af-2b35-494b-a479-862954210146"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_nisn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="79" width="164" height="20" uuid="e8b3764b-e189-431a-886d-c28f3f6e4491"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_jurusan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="99" width="164" height="20" uuid="ada85951-cb4a-4112-9cd7-f2a40e82db93"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="119" width="164" height="20" uuid="789a4e39-4f6e-4b31-ae2e-7d20e5619f72"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_no_telepon}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="293" y="139" width="164" height="20" uuid="9c6a53ad-74af-42b3-a263-01077edbe625"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_tanggal_daftar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="167" y="139" width="103" height="20" uuid="f1cd77f5-2dcc-4583-9bd3-10de1964440d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="119" width="103" height="20" uuid="dc5a7848-01ed-4235-b19d-26c073eba948"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO TELEPON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="99" width="103" height="20" uuid="4558e3e5-1305-423e-aa50-12cd9fdf73d5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="79" width="103" height="20" uuid="94e00798-aba9-415e-b7f4-b5bbbc4fc991"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JURUSAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="59" width="103" height="20" uuid="1397b254-8c3e-4041-98ec-76622eb0dfaf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NISN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="39" width="103" height="20" uuid="21dcc4bd-52d8-4ebe-b832-2e23a03703e0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="19" width="103" height="20" uuid="cc147cf9-1a68-4943-bd09-8a75299c50c3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ANGGOtA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="19" width="23" height="20" uuid="2274d7c0-eccb-4351-932f-e7039fb93b2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="39" width="23" height="20" uuid="2798f469-3036-4bad-9516-7585b830afc8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="59" width="23" height="20" uuid="14b89499-e417-4ac6-b703-9f54c5a03693"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="79" width="23" height="20" uuid="9d73ce71-44d3-4686-b46a-2861acee7054"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="99" width="23" height="20" uuid="b9593fe9-b28b-4b58-807a-e9a29778ef25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="119" width="23" height="20" uuid="a2094a0b-6242-4477-a50d-1914d06c2277"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="139" width="23" height="20" uuid="d62207fb-8ca0-4c41-9b84-de3f9737d6b0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="36" y="19" width="103" height="140" uuid="34fa3a09-73d9-4af7-934c-0b0b03619ef2"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<componentElement>
+				<reportElement x="19" y="176" width="130" height="50" uuid="0c688408-d6d1-4cee-9c38-ac979d12a1bf"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barHeight="80">
+					<jr:codeExpression><![CDATA[$F{member_id_member}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<staticText>
+				<reportElement x="299" y="196" width="158" height="20" uuid="3d632185-8607-480f-a6bf-b0db3adce574"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Azka Pradita]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="256" width="158" height="20" uuid="3cee22d1-4616-4d43-995f-5c8afd245468"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEO TECHNOLOGI AI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="176" width="46" height="20" uuid="d822d6a3-0e2a-4f5f-af12-31b946024540"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="345" y="176" width="112" height="20" uuid="36210932-9b5b-4e91-82e5-05356259b01b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

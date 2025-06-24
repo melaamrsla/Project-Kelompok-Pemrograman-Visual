@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="32d74163-7a6d-428c-b8ab-1a07ed1a77e9">
+	<property name="ireport.zoom" value="0.7513148009015799"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="PieChartDataset" uuid="e944f27b-e1c7-48a6-853c-923235e0474a"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     denda.`id_denda` AS denda_id_denda,
+     denda.`id_staff` AS denda_id_staff,
+     denda.`kode_buku` AS denda_kode_buku,
+     denda.`id_pengembalian` AS denda_id_pengembalian,
+     denda.`id_member` AS denda_id_member,
+     denda.`status` AS denda_status,
+     denda.`keterlambatan` AS denda_keterlambatan,
+     denda.`total_denda` AS denda_total_denda,
+     denda.`status_bayar` AS denda_status_bayar
+FROM
+     `denda` denda]]>
+	</queryString>
+	<field name="denda_id_denda" class="java.lang.String"/>
+	<field name="denda_id_staff" class="java.lang.String"/>
+	<field name="denda_kode_buku" class="java.lang.String"/>
+	<field name="denda_id_pengembalian" class="java.lang.String"/>
+	<field name="denda_id_member" class="java.lang.String"/>
+	<field name="denda_status" class="java.lang.String"/>
+	<field name="denda_keterlambatan" class="java.lang.String"/>
+	<field name="denda_total_denda" class="java.lang.Integer"/>
+	<field name="denda_status_bayar" class="java.lang.String"/>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="323" y="65" width="466" height="25" uuid="b757dbeb-bf09-43e5-91d8-5165f49bdeb7"/>
+				<textElement textAlignment="Right">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sekolah Technological AI]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-25" width="842" height="90" forecolor="#006699" backcolor="#006699" uuid="b1452541-00c0-41a6-9780-0e5bc849883b"/>
+				<staticText>
+					<reportElement style="Title" x="211" y="0" width="578" height="90" uuid="341adb1f-6e96-4f11-8440-85e119157925"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="48" isBold="false"/>
+					</textElement>
+					<text><![CDATA[LAPORAN DENDA BUKU]]></text>
+				</staticText>
+				<image>
+					<reportElement x="47" y="5" width="120" height="85" uuid="b0db0a48-1d46-4c36-894d-d194264ea765"/>
+					<imageExpression><![CDATA["C:\\Users\\hp\\OneDrive\\Documents\\NetBeansProjects\\Perpus\\src\\img\\library (1).png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="802" height="14" uuid="8094e29b-509f-4c3e-a7fd-137179078633"/>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="0" y="0" width="74" height="14" forecolor="#000000" uuid="7ebc2a6d-8a22-4b73-a2ec-c1c7d9ed8668"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="74" y="0" width="73" height="14" forecolor="#000000" uuid="0020b761-5ee7-4652-a083-1da187b1c9a1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[STAFF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="147" y="0" width="85" height="14" forecolor="#000000" uuid="a8a72c69-2a81-410c-af83-210c65a586e6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[KODE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="232" y="0" width="91" height="14" forecolor="#000000" uuid="dec9b657-5f25-412f-80b3-78809a5a728a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[KEMBALI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="323" y="0" width="84" height="14" forecolor="#000000" uuid="ca70defb-edfe-482e-9223-9537c6454c3c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[MEMBER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="407" y="0" width="106" height="14" forecolor="#000000" uuid="753f321d-86de-499f-bb4b-e8a3717cfa13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[STATUS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="513" y="0" width="63" height="14" forecolor="#000000" uuid="367f83ca-f0a8-40f5-a2e8-baad7fb02540"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[KETERLAMBATAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="576" y="0" width="99" height="14" forecolor="#000000" uuid="2e82e9b1-8307-450c-ad3b-43a9d0423e1b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" positionType="Float" x="675" y="0" width="127" height="14" forecolor="#000000" uuid="4fc268c8-ea99-4569-8064-06b583ecdbdd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true" pdfFontName="Helvetica"/>
+					</textElement>
+					<text><![CDATA[BAYAR]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="0" width="1" height="14" uuid="400dd82b-9d19-4c0e-a71c-ec2a45a5073e"/>
+				</line>
+				<line>
+					<reportElement x="74" y="1" width="1" height="13" uuid="8b2f98be-328e-426e-96bc-81c0a8448aa6"/>
+				</line>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="801" height="1" uuid="390bc542-b715-43c1-915f-b15d98defb70"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="14" width="801" height="1" uuid="f7a7ac01-293b-4117-b01e-49f4e8a4a1e5"/>
+			</line>
+			<line>
+				<reportElement x="146" y="1" width="1" height="13" uuid="486cd286-b7fa-4ab1-a0e6-596f16ff3632"/>
+			</line>
+			<line>
+				<reportElement x="231" y="0" width="1" height="14" uuid="ad4744ed-2c0d-4c35-8416-cbbdd251e711"/>
+			</line>
+			<line>
+				<reportElement x="322" y="0" width="1" height="14" uuid="fd88dbbd-81e7-4643-ab9c-cb2003982b23"/>
+			</line>
+			<line>
+				<reportElement x="406" y="0" width="1" height="14" uuid="5e946600-54c3-49e8-a5db-4c9b552dab39"/>
+			</line>
+			<line>
+				<reportElement x="512" y="0" width="1" height="14" uuid="40c9ef4b-908a-4f02-9097-a0ff34056619"/>
+			</line>
+			<line>
+				<reportElement x="576" y="0" width="1" height="14" uuid="186c4ab4-04a7-4a40-b111-140831e0c693"/>
+			</line>
+			<line>
+				<reportElement x="674" y="0" width="1" height="14" uuid="bcdc2123-f2ec-4e65-865f-405b3f05d8c0"/>
+			</line>
+			<line>
+				<reportElement x="801" y="0" width="1" height="14" uuid="4c08f284-454f-4631-bd31-b29e664ad128"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="14" width="801" height="1" uuid="cb8418ee-74f5-45e3-948c-7f834fed5ce1"/>
+			</line>
+			<line>
+				<reportElement x="74" y="-2" width="1" height="16" uuid="d1f44329-930a-4078-adcc-586f074cc89d"/>
+			</line>
+			<line>
+				<reportElement x="146" y="-1" width="1" height="15" uuid="61c05ace-d150-497e-8f36-7cf2904f3cc4"/>
+			</line>
+			<line>
+				<reportElement x="322" y="-2" width="1" height="16" uuid="763e6053-0cb9-4bb9-b2d2-7ca29d6df846"/>
+			</line>
+			<line>
+				<reportElement x="406" y="-1" width="1" height="15" uuid="cf2a09d3-461f-4111-8051-a621b05255bb"/>
+			</line>
+			<line>
+				<reportElement x="674" y="-1" width="1" height="15" uuid="6fd8ffca-cd16-40e6-a354-c5693b0b8303"/>
+			</line>
+			<line>
+				<reportElement x="576" y="-1" width="1" height="15" uuid="948de9c3-fd96-45c4-a8ca-7022188a39ea"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-2" width="1" height="16" uuid="a37d0fc1-e6c9-4898-9833-ace57d97866e"/>
+			</line>
+			<frame>
+				<reportElement x="0" y="0" width="802" height="14" uuid="904c7594-38de-48ad-b8d6-c83c9664e750"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="74" height="14" uuid="af05db5f-c826-40cf-b3ed-72bb2bd057ce"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_id_denda}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="74" y="0" width="73" height="14" uuid="a2510781-a61a-4d96-97ca-6d522ce6bd83"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_id_staff}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="147" y="0" width="85" height="14" uuid="cce1cbad-5d9b-490d-bbf6-52eea2aec0b5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_kode_buku}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="232" y="0" width="91" height="14" uuid="b8877c39-9ecd-4e98-9091-14681d15ab69"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_id_pengembalian}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="323" y="0" width="84" height="14" uuid="3f843d7c-e252-4fae-ba3c-8063a6bcb1a2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_id_member}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="407" y="0" width="106" height="14" uuid="60e3b390-6a4e-4275-a715-93501c84d029"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="513" y="0" width="63" height="14" uuid="28185b84-5c3d-4ae1-b3ca-6346feaf62ce"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_keterlambatan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="576" y="0" width="99" height="14" uuid="fd1e7585-1b0a-4995-99d3-212da61b3023"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_total_denda}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="Detail" positionType="Float" x="675" y="0" width="127" height="14" uuid="05abc8a1-a714-4820-bafc-a25ad5968620"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{denda_status_bayar}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement x="231" y="-2" width="1" height="16" uuid="ce0860c2-a070-4d63-b145-088f1763cbce"/>
+			</line>
+			<line>
+				<reportElement x="512" y="-1" width="1" height="15" uuid="5e48ab78-5fc9-431f-9978-ecf84a7fe761"/>
+			</line>
+			<line>
+				<reportElement x="801" y="-2" width="1" height="16" uuid="1336e7a0-3b16-4e1c-9bb8-891c47af2c7b"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="be74aad6-554c-4e7c-99a7-3948e5c9b8a0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="800" height="16" forecolor="#D0B48E" backcolor="#006699" uuid="579b4dda-5135-4beb-bf3d-a5a4f6c14e3d"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="753" y="0" width="40" height="16" forecolor="#FFFFFF" uuid="7953395d-4dc8-4861-9e13-26f881b5fec1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="673" y="0" width="80" height="16" forecolor="#FFFFFF" uuid="6f7f497c-8b41-4c50-b2a3-1b2a40cc3560"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy HH.mm.ss">
+					<reportElement style="Column header" x="2" y="0" width="197" height="16" forecolor="#FFFFFF" uuid="5e99bedd-ba2d-4d9a-9c00-5ba13451097c"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false" pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
