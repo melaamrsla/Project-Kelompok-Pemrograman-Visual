@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2025 at 04:06 PM
+-- Generation Time: Jun 26, 2025 at 11:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -102,9 +102,7 @@ INSERT INTO `denda` (`id_denda`, `id_staff`, `kode_buku`, `id_pengembalian`, `id
 ('D0003', 'S0002', 'NVL-02', 'K0003', 'M0001', 'Rusak', '0', 15000, 'Lunas'),
 ('D0004', 'S0001', 'NVL-01', 'K0004', 'M0002', 'Hilang', '0', 100000, 'Belum Lunas'),
 ('D0005', 'S0002', 'PMN-01', 'K0005', 'M0003', 'Terlambat', '2', 2000, 'Lunas'),
-('K0005', 'S0002', 'PMN-01', 'K0005', 'M0003', 'Terlambat', '2', 2000, 'Lunas'),
-('K0006', 'S0002', 'NVL-01', 'K0006', 'M0002', 'Hilang', '0', 1000000, 'Belum Lunas'),
-('K0007', 'S0002', 'NVL-04', 'K0009', 'S0002', 'Terlambat', '1', 1000, 'Lunas');
+('D0006', 'S0003', 'NVL-01', 'K0006', 'M0002', 'Hilang', '0', 100000, 'Lunas');
 
 -- --------------------------------------------------------
 
@@ -163,7 +161,8 @@ INSERT INTO `peminjaman` (`id_peminjaman`, `id_staff`, `id_member`, `kode_buku`,
 ('P0006', 'S0002', 'M0001', 'NVL-01', 'Bumi', 'Novel', '2025-06-23', '2025-06-26'),
 ('P0007', 'S0002', 'M0001', 'MTK-01', 'Pengantar Ilmu Statistika', 'Matematika', '2025-06-23', '2025-06-26'),
 ('P0008', 'S0002', 'M0001', 'NVL-02', 'Matahari', 'Novel', '2025-06-02', '2025-06-05'),
-('P0009', 'S0002', 'M0002', 'NVL-04', 'Dilan', 'Novel', '2025-06-01', '2025-06-04');
+('P0009', 'S0002', 'M0002', 'NVL-04', 'Dilan', 'Novel', '2025-06-01', '2025-06-04'),
+('P0010', 'S0002', 'M0001', 'MTK-01', 'Pengantar Ilmu Statistika', 'Matematika', '2025-06-26', '2025-06-30');
 
 -- --------------------------------------------------------
 
@@ -197,7 +196,8 @@ INSERT INTO `pengembalian` (`id_pengembalian`, `id_staff`, `id_peminjaman`, `id_
 ('K0006', 'S0001', 'P0004', 'M0002', 'NVL-01', 'Bumi', '2025-06-17', '2025-06-17', '0', 'Hilang'),
 ('K0007', 'S0002', 'P0006', 'M0001', 'NVL-01', 'Bumi', '2025-06-26', '2025-06-28', '2', 'Terlambat'),
 ('K0008', 'S0002', 'P0008', 'M0001', 'NVL-02', 'Matahari', '2025-06-05', '2025-06-06', '0', 'Tepat Waktu'),
-('K0009', 'S0002', 'P0009', 'S0002', 'NVL-04', 'Dilan', '2025-06-04', '2025-06-05', '1', 'Terlambat');
+('K0009', 'S0002', 'P0009', 'M0002', 'NVL-04', 'Dilan', '2025-06-04', '2025-06-05', '1', 'Terlambat'),
+('K0010', 'S0002', 'P0010', 'M0001', 'MTK-01', 'Pengantar Ilmu Statistika', '2025-06-30', '2025-06-30', '0', 'Rusak');
 
 -- --------------------------------------------------------
 
@@ -248,10 +248,10 @@ ALTER TABLE `buku`
 --
 ALTER TABLE `denda`
   ADD PRIMARY KEY (`id_denda`),
-  ADD KEY `id_staff` (`id_staff`),
-  ADD KEY `kode_buku` (`kode_buku`),
-  ADD KEY `id_pengembalian` (`id_pengembalian`),
-  ADD KEY `id_member` (`id_member`);
+  ADD KEY `fk_denda_staff` (`id_staff`),
+  ADD KEY `fk_denda_buku` (`kode_buku`),
+  ADD KEY `fk_denda_pengembalian` (`id_pengembalian`),
+  ADD KEY `fk_denda_member` (`id_member`);
 
 --
 -- Indexes for table `member`
@@ -264,24 +264,55 @@ ALTER TABLE `member`
 --
 ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`),
-  ADD KEY `peminjaman_staff` (`id_member`),
-  ADD KEY `peminjaman_buku` (`kode_buku`);
+  ADD KEY `fk_peminjaman_staff` (`id_staff`),
+  ADD KEY `fk_peminjaman_member` (`id_member`),
+  ADD KEY `fk_peminjaman_buku` (`kode_buku`);
 
 --
 -- Indexes for table `pengembalian`
 --
 ALTER TABLE `pengembalian`
   ADD PRIMARY KEY (`id_pengembalian`),
-  ADD KEY `id_peminjaman` (`id_staff`),
-  ADD KEY `id_staff` (`id_peminjaman`),
-  ADD KEY `id_member` (`id_member`),
-  ADD KEY `kode_buku` (`kode_buku`);
+  ADD KEY `fk_pengembalian_staff` (`id_staff`),
+  ADD KEY `fk_pengembalian_peminjaman` (`id_peminjaman`),
+  ADD KEY `fk_pengembalian_member` (`id_member`),
+  ADD KEY `fk_pengembalian_buku` (`kode_buku`);
 
 --
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`id_staff`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `denda`
+--
+ALTER TABLE `denda`
+  ADD CONSTRAINT `fk_denda_buku` FOREIGN KEY (`kode_buku`) REFERENCES `buku` (`kode_buku`),
+  ADD CONSTRAINT `fk_denda_member` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`),
+  ADD CONSTRAINT `fk_denda_pengembalian` FOREIGN KEY (`id_pengembalian`) REFERENCES `pengembalian` (`id_pengembalian`),
+  ADD CONSTRAINT `fk_denda_staff` FOREIGN KEY (`id_staff`) REFERENCES `staff` (`id_staff`);
+
+--
+-- Constraints for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  ADD CONSTRAINT `fk_peminjaman_buku` FOREIGN KEY (`kode_buku`) REFERENCES `buku` (`kode_buku`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_peminjaman_member` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_peminjaman_staff` FOREIGN KEY (`id_staff`) REFERENCES `staff` (`id_staff`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  ADD CONSTRAINT `fk_pengembalian_buku` FOREIGN KEY (`kode_buku`) REFERENCES `buku` (`kode_buku`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_pengembalian_member` FOREIGN KEY (`id_member`) REFERENCES `member` (`id_member`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_pengembalian_peminjaman` FOREIGN KEY (`id_peminjaman`) REFERENCES `peminjaman` (`id_peminjaman`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_pengembalian_staff` FOREIGN KEY (`id_staff`) REFERENCES `staff` (`id_staff`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
