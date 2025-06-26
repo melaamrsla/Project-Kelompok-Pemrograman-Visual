@@ -2,41 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/menuser.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/formpeminjamanstaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/formpeminjaman.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/logoutadmin.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/formpengembalian.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/statistik.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/databukustaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/popuppengembalian.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/login/UserID.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/laporandenda.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/formdenda.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/dashboardstaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/laporanpeminjaman.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/formstaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/popupbuku.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/sirkulasi.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/member.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/Koneksi/koneksi.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/dashboard.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/login/loginadmin.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/formpengembalian.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/login/loginawal.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/laporanpengembalian.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/formdenda.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/popuppengembalian.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/formbuku.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/popupbuku.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/laporan.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/logoutstaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/admin/popuppeminjaman.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/transaksi.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/popuppeminjaman.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/login/loginstaff.java</file>
-            <file>file:/C:/Users/hp/OneDrive/Documents/NetBeansProjects/Perpus/src/staff/menuser.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -23,7 +23,7 @@ public formpengembalian pinjam = null ;
     }
     
     protected void datatable(){
-    Object[] Baris ={"id pinjam","id member","Kode Buku","Judul Buku","tanggal Kembali"};
+    Object[] Baris ={"ID Pinjam","ID Member","Kode Buku","Judul Buku","Tanggal Kembali"};
     tabmode = new DefaultTableModel(null,Baris);
     String cariitem=txtcari.getText();
 
@@ -83,16 +83,14 @@ public void setVisible(boolean b) {
 
         jLabel6.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("DATA PEMINJAM BUKU");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jLabel6)
-                .addGap(300, 300, 300))
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +189,7 @@ public void setVisible(boolean b) {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

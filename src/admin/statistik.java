@@ -12,7 +12,6 @@ import Koneksi.koneksi;
  */
 public class statistik extends javax.swing.JFrame {
 
-
     /**
      * Creates new form statistik
      */

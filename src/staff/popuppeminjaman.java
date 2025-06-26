@@ -23,7 +23,7 @@ public formpengembalian pinjam = null ;
     }
     
     protected void datatable(){
-    Object[] Baris ={"id pinjam","id member","Kode Buku","Judul Buku","tanggal Kembali"};
+    Object[] Baris ={"ID Pinjam","ID Member","Kode Buku","Judul Buku","tanggal Kembali"};
     tabmode = new DefaultTableModel(null,Baris);
     String cariitem=txtcari.getText();
 
@@ -198,7 +198,7 @@ public formpengembalian pinjam = null ;
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();

@@ -54,7 +54,8 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
         txtidkembali.setText("");
         txtidmbr.setText("");
         txtterlambat.setText(""); 
-        txttdenda.setText("");       
+        txttdenda.setText("");
+        txtcaridenda.setText("");
         cbstatusbayar.setSelectedItem(null);      
         cbstatus.setSelectedItem(null);
     }
@@ -79,7 +80,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
 }
 
    protected void datatable(){
-      Object[] Baris = {"Id Denda", "Id Staff", "Kode Buku", "Id Pengembalian", "Id Member",  "Status","Keterlambatan", "Total Denda","Status Bayar"};
+      Object[] Baris = {"ID Denda", "ID Staff", "Kode Buku", "ID Pengembalian", "ID Member",  "Status","Keterlambatan", "Total Denda","Status Bayar"};
     tabmode = new DefaultTableModel(null, Baris);
     String cariitem = txtiddenda.getText();
 
@@ -155,6 +156,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
         jLabel8 = new javax.swing.JLabel();
         bbatal = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        bedit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -249,8 +251,8 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
                     .addComponent(txtcaridenda, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bcari))
                 .addGap(19, 19, 19)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jLabel11.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
@@ -365,6 +367,15 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         jLabel4.setText("ID Pengembalian");
 
+        bedit.setBackground(new java.awt.Color(255, 204, 153));
+        bedit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit (1).png"))); // NOI18N
+        bedit.setText("EDIT");
+        bedit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beditActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -373,38 +384,45 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel19)
-                                    .addComponent(jLabel7))
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel10))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txttdenda)
-                                    .addComponent(cbstatusbayar, 0, 244, Short.MAX_VALUE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtiddenda, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel19)
+                                            .addComponent(jLabel7))
+                                        .addGap(36, 36, 36)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel10))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txttdenda)
+                                            .addComponent(cbstatusbayar, 0, 244, Short.MAX_VALUE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtiddenda, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(81, 81, 81)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel4)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGap(220, 220, 220)
+                                .addComponent(bedit, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(81, 81, 81)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel4))
+                                .addComponent(bkembali, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -416,9 +434,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
                         .addGap(21, 21, 21)
                         .addComponent(bsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(bbatal)
-                        .addGap(18, 18, 18)
-                        .addComponent(bkembali, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(bbatal)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbstatus, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -445,7 +461,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
                                 .addComponent(jLabel11)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtidkembali, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                            .addComponent(txtidkembali)
                             .addComponent(jLabel12))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -489,6 +505,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bsimpan)
                             .addComponent(bbatal)
+                            .addComponent(bedit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bkembali))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -512,8 +529,8 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -592,6 +609,29 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
    
     }//GEN-LAST:event_tbldendaMouseClicked
 
+    private void beditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beditActionPerformed
+        String sql = "UPDATE denda SET kode_buku=?, id_pengembalian =?, id_member=?, status=?, keterlambatan=?, total_denda=?,status_bayar=? WHERE id_denda=?";
+        try {
+        PreparedStatement stat = conn.prepareStatement(sql);
+        stat.setString(1, txtkdbk.getText()); 
+        stat.setString(2, txtidkembali.getText()); 
+        stat.setString(3, txtidmbr.getText()); 
+        stat.setString(4, cbstatus.getSelectedItem().toString()); 
+        stat.setString(5, txtterlambat.getText()); 
+        stat.setString(6, txttdenda.getText()); 
+        stat.setString(7, cbstatusbayar.getSelectedItem().toString()); 
+        stat.setString(8, txtiddenda.getText()); 
+        
+        stat.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Data berhasil diubah");
+        kosong();
+        txtidkembali.requestFocus();
+        } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Data gagal diubah: " + e);
+         }
+        datatable(); 
+    }//GEN-LAST:event_beditActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -632,6 +672,7 @@ public String kdbuku, idkembali, idmbr, status, terlambat;
     private javax.swing.JButton bbatal;
     private javax.swing.JButton bcari;
     private javax.swing.JButton bcaribuku;
+    private javax.swing.JButton bedit;
     private javax.swing.JButton bkembali;
     private javax.swing.JButton bsimpan;
     private javax.swing.JComboBox<String> cbstatus;
