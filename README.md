@@ -12,12 +12,24 @@ Nama Anggota:
 6. 202243501597 - Lathifah Hana Nabilah
 7. 202243501604 - Mela Marsela
 
+## Nama Database
+
+perpustakaann
+
 ## LOGIN
 
 ## LOGIN ADMIN
+
+USERNAME admin
+PASSWORD admin123
+
 ![alt text](https://github.com/Lathifahana/Project-Kelompok-Pemrograman-Visual/blob/1a59ab1ed884239985ea767baeeee843b0fc7b29/img/LOGIN%20ADMIN.png?raw=true)
 
 ## LOGIN STAFF
+
+USERNAME Lathifah
+PASSWORD 1212
+
 ![alt text](https://github.com/Lathifahana/Project-Kelompok-Pemrograman-Visual/blob/1a59ab1ed884239985ea767baeeee843b0fc7b29/img/LOGIN%20STAFF.png?raw=true)
 
 ## MENU MASTER
