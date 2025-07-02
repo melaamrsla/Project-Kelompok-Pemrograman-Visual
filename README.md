@@ -20,15 +20,17 @@ perpustakaann
 
 ## LOGIN ADMIN
 
-USERNAME admin
-PASSWORD admin123
+USERNAME = admin
+
+PASSWORD = admin123
 
 ![alt text](https://github.com/Lathifahana/Project-Kelompok-Pemrograman-Visual/blob/1a59ab1ed884239985ea767baeeee843b0fc7b29/img/LOGIN%20ADMIN.png?raw=true)
 
 ## LOGIN STAFF
 
-USERNAME Lathifah
-PASSWORD 1212
+USERNAME = Lathifah
+
+PASSWORD = 1212
 
 ![alt text](https://github.com/Lathifahana/Project-Kelompok-Pemrograman-Visual/blob/1a59ab1ed884239985ea767baeeee843b0fc7b29/img/LOGIN%20STAFF.png?raw=true)
 
